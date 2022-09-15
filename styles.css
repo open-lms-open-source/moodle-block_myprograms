@@ -1,0 +1,29 @@
+.programbox {
+    padding: 0.5rem;
+}
+
+.programbox ion-avatar {
+    display: inline-block;
+}
+
+.programbox .border-bottom {
+    border-bottom: 1px solid #ccc;
+}
+
+.programbox .program-dates ion-label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.programbox .program-content ion-label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.programbox .program-content .ion-no-margin {
+    margin: 0px !important;
+}
+
+.programbox .program-content .program-content-header {
+    font-size: 1.25em;
+}
