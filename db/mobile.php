@@ -17,7 +17,7 @@
 /**
  * Defines handlers for mobile support for myprograms block
  *
- * @copyright  Copyright (c] 2022 Open LMS (https://www.openlms.net/]
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -31,8 +31,8 @@ $addons = [
                     'title' => 'block_myprograms:pluginname',
                 ],
                 'styles' => [
-                    'url' => '/blocks/myprograms/styles.css',
-                    'version' => 1
+                    'url' => '/blocks/myprograms/mobile/style.css',
+                    'version' => 2
                 ]
             ],
             'myprogramview' => [
@@ -44,8 +44,8 @@ $addons = [
                 'delegate' => 'CoreCourseModuleDelegate',
                 'method' => 'mobile_program_view',
                 'styles' => [
-                    'url' => '/blocks/myprograms/styles.css',
-                    'version' => 1
+                    'url' => '/blocks/myprograms/mobile/style.css',
+                    'version' => 2
                 ]
             ],
         ],

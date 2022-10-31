@@ -17,7 +17,7 @@
 /**
  * Contains functions that support mobile functionality of myprograms block.
  *
- * @copyright  Copyright (c] 2022 Open LMS (https://www.openlms.net/]
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 namespace block_myprograms\output;
@@ -43,32 +43,32 @@ class mobile {
     public static function mobile_program_overview_view($args) {
         global $DB, $CFG, $OUTPUT, $USER;
 
-        $sql = "SELECT p.*, pa.id as allocationid, pa.timecompleted as timecompleted, pa.timestart as timestart,
-            pa.timeend as timeend, pa.timedue as timedue, pa.timeallocated as timeallocated
-            FROM {enrol_programs_programs} p
-            JOIN {enrol_programs_allocations} pa ON pa.programid = p.id
-            WHERE p.archived = 0 AND pa.archived = 0
-                AND pa.userid = :userid
-            ORDER BY fullname ASC";
-        $params = ['userid' => $USER->id];
-        $programs = $DB->get_records_sql($sql, $params);
         $strnotset = get_string('notset', 'enrol_programs');
 
-        foreach ($programs as $program) {
-            $context = \context::instance_by_id($program->contextid, MUST_EXIST);
+        $programs = [];
+        $allocations = \enrol_programs\local\allocation::get_my_allocations();
+        foreach ($allocations as $allocation) {
+            $program = $DB->get_record('enrol_programs_programs', ['id' => $allocation->programid]);
+            $program->allocationid = $allocation->id;
+            $context = \context::instance_by_id($program->contextid);
+            $program->fullname = format_string($program->fullname);
             $program->categoryname = $context->get_context_name();
-            $program->status = self::get_program_status_for_display($program, $program);
+            $program->status = self::get_program_status_for_display($program, $allocation);
             $program->image = self::get_program_image($program);
-            $program->timeallocated = userdate($program->timeallocated, get_string('strftimedatetimeshort'));
-            $program->timeend = ($program->timeend) ?
-                userdate($program->timeend, get_string('strftimedatetimeshort')) : $strnotset;
-            $program->duedate = ($program->timedue) ?
-                userdate($program->timedue, get_string('strftimedatetimeshort')) : $strnotset;
+            $program->timeallocated = userdate($allocation->timeallocated, get_string('strftimedatetimeshort'));
+            $program->timeend = ($allocation->timeend) ?
+                userdate($allocation->timeend, get_string('strftimedatetimeshort')) : $strnotset;
+            $program->duedate = ($allocation->timedue) ?
+                userdate($allocation->timedue, get_string('strftimedatetimeshort')) : $strnotset;
+            $program->timestart = ($allocation->timestart) ?
+                userdate($allocation->timestart, get_string('strftimedatetimeshort')) : $strnotset;
+            $program->timecompleted = ($allocation->timecompleted) ?
+                userdate($allocation->timecompleted, get_string('strftimedatetimeshort')) : $strnotset;
 
             $top = program::load_content($program->id);
             $completedcount = 0;
             $totalcompletions = 0;
-            $allocationid = $program->allocationid;
+            $allocationid = $allocation->id;
 
             $getcompletion = function(item $item, $itemdepth) use (&$getcompletion,
                 $allocationid, &$DB, &$completedcount, &$totalcompletions): void {
@@ -102,8 +102,10 @@ class mobile {
                 }
                 $program->tags = $tags;
             }
+            $programs[] = $program;
         }
 
+        $data = [];
         $data['hasprograms'] = (count($programs) > 0);
         $data['programid'] = 1;
         return [
@@ -115,8 +117,8 @@ class mobile {
             ],
             'javascript' => file_get_contents($CFG->dirroot . "/blocks/myprograms/mobile/js/programsview.js"),
             'otherdata' => [
-                'programs' => json_encode(array_values($programs)),
-                'filteredprograms' => json_encode(array_values($programs)),
+                'programs' => json_encode($programs),
+                'filteredprograms' => json_encode($programs),
             ],
         ];
     }
@@ -133,15 +135,11 @@ class mobile {
         $programid = $args['pid'];
 
         $program = $DB->get_record('enrol_programs_programs', ['id' => $programid]);
-        if (!$program || $program->archived) {
-            if ($program) {
-                $context = \context::instance_by_id($program->contextid);
-            } else {
-                $context = \context_system::instance();
-            }
-            if (!has_capability('enrol/programs:view', $context)) {
-                throw new \moodle_exception('error:cannotaccessprogram', 'block_myprograms');
-            }
+        if (!$program) {
+            throw new \moodle_exception('error:cannotaccessprogram', 'block_myprograms');
+        }
+        if (!\enrol_programs\local\catalogue::is_program_visible($program)) {
+            throw new \moodle_exception('error:cannotaccessprogram', 'block_myprograms');
         }
 
         $context = \context::instance_by_id($program->contextid);
@@ -240,7 +238,7 @@ class mobile {
         $presentation = (array)json_decode($program->presentationjson);
         if (!empty($presentation['image'])) {
             $imageurl = \moodle_url::make_file_url("$CFG->wwwroot/pluginfile.php",
-                '/' . $context->id . '/enrol_programs/image/' . $program->id . '/'. $presentation['image'], false);
+                '/' . $program->contextid . '/enrol_programs/image/' . $program->id . '/'. $presentation['image'], false);
             $programimage = $imageurl->out();
         }
         return $programimage;

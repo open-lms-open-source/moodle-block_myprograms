@@ -120,13 +120,13 @@
             <ion-col class="ion-no-padding" size="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
                 <ion-label position="stacked"><b>{{ 'plugin.block_myprograms.allocationdate' | translate }}</b></ion-label>
                 <core-format-text [text]="CONTENT_OTHERDATA.allocation.timeallocateddate"></core-format-text>
-                <ng-container *ngIf="CONTENT_OTHERDATA.allocation.programstart">
-                    <ion-label position="stacked"><b>{{ 'plugin.block_myprograms.programstart' | translate }}</b></ion-label>
-                    <core-format-text [text]="CONTENT_OTHERDATA.allocation.timeduedatedate"></core-format-text>
-                </ng-container>
                 <ng-container *ngIf="CONTENT_OTHERDATA.allocation.timestartdate">
-                    <ion-label position="stacked"><b>{{ 'plugin.block_myprograms.programdue' | translate }}</b></ion-label>
+                    <ion-label position="stacked"><b>{{ 'plugin.block_myprograms.programstart' | translate }}</b></ion-label>
                     <core-format-text [text]="CONTENT_OTHERDATA.allocation.timestartdate"></core-format-text>
+                </ng-container>
+                <ng-container *ngIf="CONTENT_OTHERDATA.allocation.timeduedatedate">
+                    <ion-label position="stacked"><b>{{ 'plugin.block_myprograms.programdue' | translate }}</b></ion-label>
+                    <core-format-text [text]="CONTENT_OTHERDATA.allocation.timeduedatedate"></core-format-text>
                 </ng-container>
                 <ng-container *ngIf="CONTENT_OTHERDATA.allocation.timeenddatedate">
                     <ion-label position="stacked"><b>{{ 'plugin.block_myprograms.programend' | translate }}</b></ion-label>
