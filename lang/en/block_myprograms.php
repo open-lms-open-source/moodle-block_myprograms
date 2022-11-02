@@ -26,6 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['myprograms:myaddinstance'] = 'Add a new My programs block to Dashboard';
+$string['myprograms:addinstance'] = 'Add a new My programs block to Dashboard';
 $string['pluginname'] = 'My programs';
 $string['privacy:metadata'] = 'My programs block does not store data itself.';
 $string['allocationdate'] = 'Allocation date';
