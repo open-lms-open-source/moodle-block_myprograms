@@ -44,7 +44,7 @@ $capabilities = array(
             'user' => CAP_ALLOW
         ),
 
-        'clonepermissionsfrom' => 'moodle/my:manageblocks'
+        'clonepermissionsfrom' => 'moodle/site:manageblocks'
     ),
     
 );
