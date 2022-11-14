@@ -18,7 +18,7 @@
  * Capabilities for My programs block.
  *
  * @package    enrol_programs
- * @copyright  Copyright (c] 2022 Open LMS (https://www.openlms.net/]
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
  * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -31,7 +31,7 @@ $capabilities = array(
         'captype' => 'write',
         'contextlevel' => CONTEXT_SYSTEM,
         'archetypes' => array(
-            'user' => CAP_ALLOW
+            'user' => CAP_ALLOW,
         ),
 
         'clonepermissionsfrom' => 'moodle/my:manageblocks'
@@ -39,9 +39,9 @@ $capabilities = array(
 
     'block/myprograms:addinstance' => array(
         'captype' => 'write',
-        'contextlevel' => CONTEXT_SYSTEM,
+        'contextlevel' => CONTEXT_BLOCK,
         'archetypes' => array(
-            'user' => CAP_ALLOW
+            'manager' => CAP_ALLOW,
         ),
 
         'clonepermissionsfrom' => 'moodle/site:manageblocks'

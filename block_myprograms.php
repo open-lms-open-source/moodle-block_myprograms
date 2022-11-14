@@ -52,10 +52,7 @@ class block_myprograms extends block_base {
      * @return array
      */
     public function applicable_formats() {
-        return array(
-            'my' => true,
-            'multidash-*' => true
-        );
+        return ['all' => true];
     }
 
     /**
