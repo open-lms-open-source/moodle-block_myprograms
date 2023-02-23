@@ -98,7 +98,7 @@ class mobile {
                 $tagsitems = \core_tag_tag::get_item_tags('enrol_programs', 'program', $program->id);
                 $tags = [];
                 foreach ($tagsitems as $tagid => $tag) {
-                    $tags[] = ['id' => $tagid, 'displayname' => $tag->get_display_name()];
+                    $tags[] = ['id' => $tagid, 'displayname' => $tag->get_display_name(), 'color' => 'dark'];
                 }
                 $program->tags = $tags;
             }
@@ -159,7 +159,7 @@ class mobile {
             $tagsitems = \core_tag_tag::get_item_tags('enrol_programs', 'program', $program->id);
             $tags = [];
             foreach ($tagsitems as $tagid => $tag) {
-                $tags[] = ['id' => $tagid, 'displayname' => $tag->get_display_name()];
+                $tags[] = ['id' => $tagid, 'displayname' => $tag->get_display_name(), 'color' => 'dark'];
             }
             $program->tags = $tags;
         }
