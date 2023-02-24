@@ -65,15 +65,38 @@
     <core-format-text [text]="'plugin.block_myprograms.noprograms' | translate" ></core-format-text>
 <%/hasprograms%>
 <%#hasprograms%>
-    <ion-row class="addon-block-myoverview-filter">
-        <ion-col>
+    <ion-row class="ion-justify-content-between ion-align-items-center block-myprograms-filter">
+        <ion-col size="auto" class="md hydrated">
+            <core-combobox [label]="'plugin.block_myprograms.filterprograms' | translate" selection="allactive"
+                (ionChange)="filterOptionsChanged($event.target)">
+                <ion-select-option class="ion-text-wrap" value="all">
+                    {{ 'plugin.block_myprograms.programstatusall' | translate }}
+                </ion-select-option>
+                <ion-select-option class="ion-text-wrap core-select-option-border-bottom" value="allactive">
+                    {{ 'plugin.block_myprograms.programstatusallactive' | translate }}
+                </ion-select-option>
+                <ion-select-option class="ion-text-wrap" value="open">
+                    {{ 'plugin.block_myprograms.programstatusopen' | translate }}
+                </ion-select-option>
+                <ion-select-option class="ion-text-wrap" value="completed">
+                    {{ 'plugin.block_myprograms.programstatuscompleted' | translate }}
+                </ion-select-option>
+                <ion-select-option class="ion-text-wrap" value="overdue">
+                    {{ 'plugin.block_myprograms.programstatusoverdue' | translate }}
+                </ion-select-option>
+                <ion-select-option class="ion-text-wrap" value="failed">
+                    {{ 'plugin.block_myprograms.programstatusfailed' | translate }}
+                </ion-select-option>
+            </core-combobox>
+        </ion-col>
+        <ion-col class="md hydrated">
             <!-- Filter programs. -->
             <ion-searchbar [(ngModel)]="textFilter" (ionInput)="filterTextChanged($event.target)"
                 (ionCancel)="filterTextChanged($event.target)" [placeholder]="'plugin.block_myprograms.filterprograms' | translate">
             </ion-searchbar>
         </ion-col>
     </ion-row>
-    <div class="safe-area-padding">
+    <div class="safe-area-padding block-myprograms-results">
         <ion-grid class="ion-no-padding core-no-grid list-item-limited-width md hydrated">
             <ion-row class="ion-no-padding">
                 <ion-col *ngFor="let program of CONTENT_OTHERDATA.filteredprograms" class="ion-no-padding" size="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
@@ -127,6 +150,16 @@
                 </ion-col>
             </ion-row>
         </ion-grid>
+        <core-empty-box *ngIf="CONTENT_OTHERDATA.filteredprograms.length == 0" image="assets/img/icons/courses.svg">
+            <p class="item-heading">
+                {{'plugin.block_myprograms.noresult' | translate}}
+            </p>
+            <ng-container>
+                <p class="subdued">
+                    {{'plugin.block_myprograms.noresultdescription' | translate}}
+                </p>
+            </ng-container>
+        </core-empty-box>
     </div>
 <%/hasprograms%>
 

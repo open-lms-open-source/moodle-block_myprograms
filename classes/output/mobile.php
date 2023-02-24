@@ -250,20 +250,20 @@ class mobile {
 
         if ($program->archived || $allocation->archived) {
             if ($allocation->timecompleted) {
-                $result = ['color' => 'success', 'text' => get_string('programstatus_archivedcompleted', 'enrol_programs')];
+                $result = ['color' => 'success', 'type' => 'archivecompleted', 'text' => get_string('programstatus_archivedcompleted', 'enrol_programs')];
             } else {
-                $result = ['color' => 'dark', 'text' => get_string('programstatus_archived', 'enrol_programs')];
+                $result = ['color' => 'dark', 'type' => 'archive', 'text' => get_string('programstatus_archived', 'enrol_programs')];
             }
         } else if ($allocation->timecompleted) {
-            $result = ['color' => 'success', 'text' => get_string('programstatus_completed', 'enrol_programs')];
+            $result = ['color' => 'success', 'type' => 'completed', 'text' => get_string('programstatus_completed', 'enrol_programs')];
         } else if ($allocation->timestart > $now) {
-            $result = ['color' => 'light', 'text' => get_string('programstatus_future', 'enrol_programs')];
+            $result = ['color' => 'light', 'type' => 'future', 'text' => get_string('programstatus_future', 'enrol_programs')];
         } else if ($allocation->timeend && $allocation->timeend < $now) {
-            $result = ['color' => 'danger', 'text' => get_string('programstatus_failed', 'enrol_programs')];
+            $result = ['color' => 'danger', 'type' => 'failed', 'text' => get_string('programstatus_failed', 'enrol_programs')];
         } else if ($allocation->timedue && $allocation->timedue < $now) {
-            $result = ['color' => 'warning', 'text' => get_string('programstatus_overdue', 'enrol_programs')];
+            $result = ['color' => 'warning', 'type' => 'overdue', 'text' => get_string('programstatus_overdue', 'enrol_programs')];
         } else {
-            $result = ['color' => 'primary', 'text' => get_string('programstatus_open', 'enrol_programs')];
+            $result = ['color' => 'primary', 'type' => 'open', 'text' => get_string('programstatus_open', 'enrol_programs')];
         }
 
         return $result;

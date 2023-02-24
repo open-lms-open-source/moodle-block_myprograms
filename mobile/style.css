@@ -27,3 +27,49 @@
 .programbox .program-content .program-content-header {
     font-size: 1.25em;
 }
+
+ion-row.block-myprograms-filter {
+    margin: 8px;
+    padding: 0;
+}
+
+ion-row.block-myprograms-filter ion-col {
+    padding: 0;
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+ion-row.block-myprograms-filter ion-button,
+ion-row.block-myprograms-filter core-combobox ::ng-deep ion-button {
+    --border-width: 0;
+    --a11y-min-target-size: 40px;
+    margin: 0;
+}
+
+ion-row.block-myprograms-filter ion-button .select-icon,
+ion-row.block-myprograms-filter core-combobox ::ng-deep ion-button .select-icon {
+    display: none;
+}
+
+ion-row.block-myprograms-filter ion-button ion-icon,
+ion-row.block-myprograms-filter core-combobox ::ng-deep ion-button ion-icon {
+    font-size: 20px;
+}
+
+ion-row.block-myprograms-filter core-combobox ::ng-deep ion-select {
+    margin: 0;
+    --a11y-min-target-size: 40px;
+}
+
+ion-row.block-myprograms-filter ion-searchbar {
+    padding: 0;
+    --height: 40px;
+}
+.block-myprograms-results core-empty-box .item-heading {
+    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+.block-myprograms-results core-empty-box .subdued {
+    color: var(--subdued-text-color);
+}

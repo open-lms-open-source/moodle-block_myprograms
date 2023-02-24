@@ -24,6 +24,7 @@
 const allprograms = this.CONTENT_OTHERDATA.programs;
 
 this.textFilter = '';
+this.optionFilter = '';
 
 if (Array.isArray(this.CONTENT_OTHERDATA.data) && this.CONTENT_OTHERDATA.data.length == 0) {
     // When there are no responses we receive an empty array instead of an empty object. Fix it.
@@ -39,18 +40,54 @@ this.filterTextChanged = (target) => {
     this.filterPrograms();
 }
 
+this.filterOptionsChanged = (target) => {
+    if (target) {
+        this.optionFilter = target.value || 'allactive';
+    } else {
+        this.optionFilter = 'allactive';
+    }
+
+    this.filterPrograms();
+}
+
 this.filterPrograms = () => {
     let filteredprograms = allprograms;
-    // Text filter.
+    // Text filter and status filter.
     const value = this.textFilter.trim().toLowerCase();
-    if (value != '' && filteredprograms.length > 0) {
+    const option = this.optionFilter.trim().toLowerCase();
+
+    if (filteredprograms.length > 0) {
         this.CONTENT_OTHERDATA.filteredprograms = filteredprograms.filter((program) => {
-            // Filter by both program full name and tags
-            let nameHasFilterText = (program.fullname.toLowerCase().indexOf(value) > -1);
-            let tagHasFilterText = program.tags.filter((tag) => tag.displayname.toLowerCase() == value).length > 0;
-            return nameHasFilterText || tagHasFilterText;
+            // Filter first to make sure the program matches the selected status.
+            let hasStatus = false;
+            if(option === 'all') {
+                hasStatus = true;
+            } else {
+                if (program.status) {
+                    if (program.status.type.toLowerCase() === option) {
+                        hasStatus = true;
+                    } else if (program.status.type.toLowerCase() === 'open' && option === 'allactive') {
+                        hasStatus = true;
+                    } else if (program.status.type.toLowerCase() === 'future' && (option === 'open' || option === 'allactive')) {
+                        hasStatus = true;
+                    }
+                } else if (option === 'allactive') {
+                    // If the the program doesn't have a status, we assume it should show in the all active filter.
+                    hasStatus = true; 
+                }
+            }
+
+            // Filter by program name and tags. Name is a partial text match. Tags is a full text match.
+            if (hasStatus === true) {
+                let nameHasFilterText = (program.fullname.toLowerCase().indexOf(value) > -1);
+                let tagHasFilterText = program.tags.filter((tag) => tag.displayname.toLowerCase() == value).length > 0;
+                return nameHasFilterText || tagHasFilterText;
+            }
+            return false;
         });
     } else {
         this.CONTENT_OTHERDATA.filteredprograms = filteredprograms;
     }
 }
+
+this.filterOptionsChanged();
