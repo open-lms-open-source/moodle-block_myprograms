@@ -135,15 +135,6 @@
                                 <div>
                                     <core-progress-bar [progress]="program.progress" a11yText="plugin.block_myprograms.programprogress"></core-progress-bar>
                                 </div>
-                                <div *ngFor="let tag of program.tags">
-                                    <ion-chip [color]="tag.color" class="ion-text-nowrap">
-                                        <span class="sr-only">{{tag.displayname}}</span>
-                                        <ion-label>
-                                            <core-format-text [text]="tag.displayname" [contextInstanceId]="program.contextid">
-                                            </core-format-text>
-                                        </ion-label>
-                                    </ion-chip>
-                                </div>
                             </ion-label>
                         </ion-item>
                     </ion-card>

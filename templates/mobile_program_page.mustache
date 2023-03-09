@@ -101,7 +101,7 @@
             <ion-col class="ion-no-padding" size="12" size-sm="6" size-md="6" size-lg="4" size-xl="3">
                 <ion-chip [color]="CONTENT_OTHERDATA.program.status.color" 
                     class="ion-text-nowrap">
-                    <span class="sr-only">CONTENT_OTHERDATA.program.status.text</span>
+                    <span class="sr-only">{{CONTENT_OTHERDATA.program.status.text}}</span>
                     <ion-label>
                         <core-format-text [text]="CONTENT_OTHERDATA.program.status.text" [contextInstanceId]="CONTENT_OTHERDATA.program.contextid">
                         </core-format-text>
@@ -164,6 +164,18 @@
                         {{ content.completiontype }}
                     </ion-label>
                 </ng-container>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-no-padding program-tags">
+            <ion-col *ngFor="let tag of CONTENT_OTHERDATA.program.tags" class="ion-no-padding" size="12" size-sm="6" size-md="6" size-lg="4"
+                size-xl="3">
+                <ion-chip [color]="tag.color" class="ion-text-nowrap">
+                    <span class="sr-only">{{tag.displayname}}</span>
+                    <ion-label>
+                        <core-format-text [text]="tag.displayname" [contextInstanceId]="CONTENT_OTHERDATA.program.contextid">
+                        </core-format-text>
+                    </ion-label>
+                </ion-chip>
             </ion-col>
         </ion-row>
     </ion-grid>
