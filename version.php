@@ -27,11 +27,11 @@ defined('MOODLE_INTERNAL') || die();
 
 /** @var stdClass $plugin */
 
-$plugin->version   = 2022111500;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires  = 2021051704;        // Requires this Moodle version.
+$plugin->version   = 2023033000;
+$plugin->requires  = 2022112802.00; // 4.1.2 (Build: 20230313)
 $plugin->component = 'block_myprograms';
-$plugin->maturity  = MATURITY_RC;
-$plugin->release   = 'v1.0.10+';
-$plugin->supported = [311, 400];
+$plugin->maturity  = MATURITY_STABLE;
+$plugin->release   = 'v2.0';
+$plugin->supported = [401, 401];
 
-$plugin->dependencies = ['enrol_programs' => 2022111500];
+$plugin->dependencies = ['enrol_programs' => 2023033000];
