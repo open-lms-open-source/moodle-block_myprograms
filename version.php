@@ -27,11 +27,11 @@ defined('MOODLE_INTERNAL') || die();
 
 /** @var stdClass $plugin */
 
-$plugin->version   = 2023051500;
-$plugin->requires  = 2022112802.00; // 4.1.2 (Build: 20230313)
+$plugin->version   = 2024010800;
+$plugin->requires  = 2023100902.00; // 4.3.2
 $plugin->component = 'block_myprograms';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = 'v2.3+';
-$plugin->supported = [401, 402];
+$plugin->release   = 'v3.0alpha';
+$plugin->supported = [403, 403];
 
-$plugin->dependencies = ['enrol_programs' => 2023051500];
+$plugin->dependencies = ['enrol_programs' => 2024010800];
