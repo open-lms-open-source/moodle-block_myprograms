@@ -31,7 +31,7 @@ $plugin->version   = 2024010800;
 $plugin->requires  = 2023100902.00; // 4.3.2
 $plugin->component = 'block_myprograms';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = 'v3.1.0dev';
+$plugin->release   = 'v3.1.0';
 $plugin->supported = [403, 403];
 
 $plugin->dependencies = ['enrol_programs' => 2024010800];
