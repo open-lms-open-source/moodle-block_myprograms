@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,4 +44,12 @@ $string['programdue'] = 'Programma in scadenza';
 $string['programprogress'] = 'Programma in corso';
 $string['programstart'] = 'Inizio programma';
 $string['programstatus'] = 'Stato programma';
+$string['programstatusall'] = 'Tutti';
+$string['programstatusallactive'] = 'Tutti quelli attivi';
+$string['programstatuscompleted'] = 'Completato';
+$string['programstatusfailed'] = 'Non riuscito';
+$string['programstatusopen'] = 'Apri';
+$string['programstatusoverdue'] = 'Fuori tempo massimo';
 $string['sequencetype'] = 'Tipo di completamento';
+$string['noresult'] = 'I parametri di ricerca non corrispondono ad alcun programma.';
+$string['noresultdescription'] = 'Prova a modificare i filtri.';

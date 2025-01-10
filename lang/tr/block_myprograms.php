@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,4 +44,12 @@ $string['programdue'] = 'Program sonu';
 $string['programprogress'] = 'Program ilerleme durumu';
 $string['programstart'] = 'Program başlangıcı';
 $string['programstatus'] = 'Program durumu';
+$string['programstatusall'] = 'Tümü';
+$string['programstatusallactive'] = 'Tümü Etkin';
+$string['programstatuscompleted'] = 'Tamamlandı';
+$string['programstatusfailed'] = 'Başarısız';
+$string['programstatusopen'] = 'Açık';
+$string['programstatusoverdue'] = 'Süresi geçmiş';
 $string['sequencetype'] = 'Tamamlama türü';
+$string['noresult'] = 'Aramanız herhangi bir programla eşleşmiyor.';
+$string['noresultdescription'] = 'Filtrelerinizi ayarlamayı deneyin.';

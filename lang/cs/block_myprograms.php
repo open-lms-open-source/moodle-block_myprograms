@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,4 +44,12 @@ $string['programdue'] = 'Blížící se termín programu';
 $string['programprogress'] = 'Postup programu';
 $string['programstart'] = 'Začátek programu';
 $string['programstatus'] = 'Stav programu';
+$string['programstatusall'] = 'Všechny';
+$string['programstatusallactive'] = 'Všechny aktivní';
+$string['programstatuscompleted'] = 'Hotovo';
+$string['programstatusfailed'] = 'Nezdařilo se';
+$string['programstatusopen'] = 'Otevřít';
+$string['programstatusoverdue'] = 'Překročen časový limit';
 $string['sequencetype'] = 'Typ dokončení';
+$string['noresult'] = 'Vašemu vyhledávání neodpovídají žádné programy.';
+$string['noresultdescription'] = 'Zkuste upravit filtry.';

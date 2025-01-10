@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,4 +44,12 @@ $string['programdue'] = 'Ohjelman määräpäivä';
 $string['programprogress'] = 'Ohjelman edistyminen';
 $string['programstart'] = 'Ohjelma alkaa';
 $string['programstatus'] = 'Ohjelman tila';
+$string['programstatusall'] = 'Kaikki';
+$string['programstatusallactive'] = 'Kaikki aktiiviset';
+$string['programstatuscompleted'] = 'Suoritettu';
+$string['programstatusfailed'] = 'Epäonnistui';
+$string['programstatusopen'] = 'Avoin';
+$string['programstatusoverdue'] = 'Myöhässä';
 $string['sequencetype'] = 'Suoritustyyppi';
+$string['noresult'] = 'Haku ei vastannut mitään ohjelmia.';
+$string['noresultdescription'] = 'Kokeile muuttaa suodattimia.';

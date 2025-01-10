@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 $string['myprograms:myaddinstance'] = 'إضافة كتلة "برامجي" جديدة إلى لوحة المعلومات';
 $string['myprograms:addinstance'] = 'إضافة كتلة "برامجي" جديدة إلى لوحة المعلومات';
 $string['pluginname'] = 'برامجي';
-$string['privacy:metadata'] = 'لا تُخزن كتلة برامجي البيانات نفسها.';
+$string['privacy:metadata'] = 'لا تُخزن كتلة "برامجي" البيانات ذاتيًا.';
 $string['allocationdate'] = 'تاريخ التخصيص';
 $string['allocationend'] = 'انتهاء التخصيص';
 $string['allocationstart'] = 'بداية التخصيص';
@@ -44,4 +44,12 @@ $string['programdue'] = 'البرنامج المستحق';
 $string['programprogress'] = 'تقدم البرنامج';
 $string['programstart'] = 'بداية البرنامج';
 $string['programstatus'] = 'حالة البرنامج';
+$string['programstatusall'] = 'الكل';
+$string['programstatusallactive'] = 'كل "نشط"';
+$string['programstatuscompleted'] = 'تم الإكمال';
+$string['programstatusfailed'] = 'فشل';
+$string['programstatusopen'] = 'مفتوحة';
+$string['programstatusoverdue'] = 'متأخر';
 $string['sequencetype'] = 'نوع الإكمال';
+$string['noresult'] = 'لم يتم العثور على أي برامج تطابق بحثك.';
+$string['noresultdescription'] = 'حاول تعديل عوامل التصفية.';

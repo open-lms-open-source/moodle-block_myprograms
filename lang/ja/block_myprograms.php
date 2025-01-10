@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,4 +44,12 @@ $string['programdue'] = 'プログラムの期日';
 $string['programprogress'] = 'プログラムの進捗';
 $string['programstart'] = 'プログラム開始';
 $string['programstatus'] = 'プログラムステータス';
+$string['programstatusall'] = 'すべて';
+$string['programstatusallactive'] = 'すべてアクティブ';
+$string['programstatuscompleted'] = '完了';
+$string['programstatusfailed'] = '失敗';
+$string['programstatusopen'] = 'オープン';
+$string['programstatusoverdue'] = '期限切れ';
 $string['sequencetype'] = '完了タイプ';
+$string['noresult'] = '検索内容と一致するプログラムがありませんでした。';
+$string['noresultdescription'] = 'フィルタを調整してみてください。';

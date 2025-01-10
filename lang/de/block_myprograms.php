@@ -18,17 +18,17 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['myprograms:myaddinstance'] = 'Neuen \'\'Meine Programme\'\'-Block zum Dashboard hinzufügen';
-$string['myprograms:addinstance'] = 'Neuen \'\'Meine Programme\'\'-Block zum Dashboard hinzufügen';
+$string['myprograms:myaddinstance'] = 'Neuen \''Meine Programme\''-Block zum Dashboard hinzufügen';
+$string['myprograms:addinstance'] = 'Neuen \''Meine Programme\''-Block zum Dashboard hinzufügen';
 $string['pluginname'] = 'Meine Programme';
-$string['privacy:metadata'] = 'Der \'\'Meine Programme\'\'-Block speichert keine Daten';
+$string['privacy:metadata'] = 'Der \''Meine Programme\''-Block speichert keine Daten';
 $string['allocationdate'] = 'Zuordnungsdatum';
 $string['allocationend'] = 'Zuordnungsende';
 $string['allocationstart'] = 'Zuordnungsbeginn';
@@ -44,4 +44,12 @@ $string['programdue'] = 'Programm fällig';
 $string['programprogress'] = 'Programmfortschritt';
 $string['programstart'] = 'Programmstart';
 $string['programstatus'] = 'Programmstatus';
+$string['programstatusall'] = 'Alle';
+$string['programstatusallactive'] = 'Alle aktiv';
+$string['programstatuscompleted'] = 'Abgeschlossen';
+$string['programstatusfailed'] = 'Fehlgeschlagen';
+$string['programstatusopen'] = 'Öffnen';
+$string['programstatusoverdue'] = 'Überfällig';
 $string['sequencetype'] = 'Fertigstellungstyp';
+$string['noresult'] = 'Ihre Suche stimmt mit keinem Programm überein.';
+$string['noresultdescription'] = 'Versuchen Sie, die Filter anzupassen.';

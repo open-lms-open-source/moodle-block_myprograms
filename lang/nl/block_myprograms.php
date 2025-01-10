@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,13 +29,13 @@ $string['myprograms:myaddinstance'] = 'Een nieuw blok Mijn programma\'s toevoege
 $string['myprograms:addinstance'] = 'Een nieuw blok Mijn programma\'s toevoegen aan Dashboard';
 $string['pluginname'] = 'Mijn programma\'s';
 $string['privacy:metadata'] = 'Het blok Mijn programma\'s slaat zelf geen gegevens op.';
-$string['allocationdate'] = 'Toekenningsdatum';
-$string['allocationend'] = 'Einde toekenning';
-$string['allocationstart'] = 'Start toekenning';
+$string['allocationdate'] = 'Toewijzingsdatum';
+$string['allocationend'] = 'Einde toewijzing';
+$string['allocationstart'] = 'Start toewijzing';
 $string['completiondate'] = 'Voltooiingsdatum';
 $string['content'] = "Inhoud";
 $string['error:cannotaccessprogram'] = 'U hebt geen toegang tot dit programma';
-$string['error:coursemisconfigured'] = 'Cursus is onjuist geconfigureerd';
+$string['error:coursemisconfigured'] = 'Cursus is slecht geconfigureerd';
 $string['filterprograms'] = 'Mijn programma\'s filteren';
 $string['noprograms'] = 'Er is geen programma-informatie die kan worden getoond.';
 $string['programdetail'] = 'Programmadetail';
@@ -44,4 +44,12 @@ $string['programdue'] = 'Programma-deadline';
 $string['programprogress'] = 'Programmavoortgang';
 $string['programstart'] = 'Start programma';
 $string['programstatus'] = 'Programmastatus';
+$string['programstatusall'] = 'Alle';
+$string['programstatusallactive'] = 'Alle actief';
+$string['programstatuscompleted'] = 'Voltooid';
+$string['programstatusfailed'] = 'Mislukt';
+$string['programstatusopen'] = 'Open';
+$string['programstatusoverdue'] = 'Te laat';
 $string['sequencetype'] = 'Voltooiingstype';
+$string['noresult'] = 'Uw zoekopdracht heeft geen programma\'s gevonden.';
+$string['noresultdescription'] = 'Probeer uw filters aan te passen.';

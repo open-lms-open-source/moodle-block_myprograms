@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,4 +44,12 @@ $string['programdue'] = '計畫截止';
 $string['programprogress'] = '計畫進度';
 $string['programstart'] = '計畫開始';
 $string['programstatus'] = '計畫狀態';
+$string['programstatusall'] = '全部';
+$string['programstatusallactive'] = '全部作用中';
+$string['programstatuscompleted'] = '已完成';
+$string['programstatusfailed'] = '失敗';
+$string['programstatusopen'] = '開啟舊檔';
+$string['programstatusoverdue'] = '過期';
 $string['sequencetype'] = '完成類型';
+$string['noresult'] = '您的搜尋不符合任何計畫。';
+$string['noresultdescription'] = '請嘗試調整篩選器。';

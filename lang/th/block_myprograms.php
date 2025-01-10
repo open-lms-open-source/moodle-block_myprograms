@@ -18,8 +18,8 @@
  * My programs block
  *
  * @package    block_myprograms
- * @copyright  2023 Open LMS (https://www.openlms.net/)
- * @author     Chris Tranel
+ * @copyright  2022 Open LMS (https://www.openlms.net/)
+ * @author     Petr Skoda
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -44,4 +44,12 @@ $string['programdue'] = 'ครบกำหนดโปรแกรม';
 $string['programprogress'] = 'ความคืบหน้าโปรแกรม';
 $string['programstart'] = 'เริ่มต้นโปรแกรม';
 $string['programstatus'] = 'สถานะโปรแกรม';
+$string['programstatusall'] = 'ทั้งหมด';
+$string['programstatusallactive'] = 'ที่ใช้งานอยู่ทั้งหมด';
+$string['programstatuscompleted'] = 'เสร็จสมบูรณ์';
+$string['programstatusfailed'] = 'ล้มเหลว';
+$string['programstatusopen'] = 'เปิด';
+$string['programstatusoverdue'] = 'เกินกำหนด';
 $string['sequencetype'] = 'ประเภทการเสร็จสมบูรณ์';
+$string['noresult'] = 'การค้นหาของคุณไม่ตรงกับโปรแกรมใดๆ';
+$string['noresultdescription'] = 'ลองปรับตัวกรองของคุณ';
