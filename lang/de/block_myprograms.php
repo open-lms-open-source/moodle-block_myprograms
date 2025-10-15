@@ -25,10 +25,10 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['myprograms:myaddinstance'] = 'Neuen \'Meine Programme\'-Block zum Dashboard hinzufügen';
-$string['myprograms:addinstance'] = 'Neuen \'Meine Programme\'-Block zum Dashboard hinzufügen';
+$string['myprograms:myaddinstance'] = 'Neuen \'\'Meine Programme\'\'-Block zum Dashboard hinzufügen';
+$string['myprograms:addinstance'] = 'Neuen \'\'Meine Programme\'\'-Block zum Dashboard hinzufügen';
 $string['pluginname'] = 'Meine Programme';
-$string['privacy:metadata'] = 'Der \'Meine Programme\'-Block speichert keine Daten';
+$string['privacy:metadata'] = 'Der \'\'Meine Programme\'\'-Block speichert keine Daten';
 $string['allocationdate'] = 'Zuordnungsdatum';
 $string['allocationend'] = 'Zuordnungsende';
 $string['allocationstart'] = 'Zuordnungsbeginn';
